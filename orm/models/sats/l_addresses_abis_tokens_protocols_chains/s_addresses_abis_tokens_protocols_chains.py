@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, Text, ForeignKey, Boolean
 
-from orm.models.main import Base
+from base.main import Base
 
 
 class SatelliteAddressesAbisTokensProtocolsChains(Base):
