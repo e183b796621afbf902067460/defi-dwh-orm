@@ -6,6 +6,9 @@ from base.main import Base
 class LinkAddressesAbisTokensProtocolsLabelsChains(Base):
 
     __tablename__ = 'l_addresses_abis_tokens_protocols_labels_chains'
+    __table_args__ = {
+        'comment': 'Placements'
+    }
 
     l_address_abi_token_protocol_label_chain_id = Column(Integer, primary_key=True)  # PK
 
