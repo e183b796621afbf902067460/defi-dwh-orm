@@ -15,4 +15,4 @@ class LinkAddressesAbisTokensProtocolsChains(Base):
     l_address_abi_chain_id = Column(Integer, ForeignKey('l_addresses_abis_chains.l_address_abi_chain_id'), nullable=False)
     l_address_abi_token_chain_id = Column(Integer, ForeignKey('l_addresses_abis_tokens_chains.l_address_abi_token_chain_id'))
 
-    l_address_abi_token_protocol_chain_name = Column(Text, nullable=False)
+    l_address_abi_token_protocol_chain_pool = Column(Text, nullable=False)
