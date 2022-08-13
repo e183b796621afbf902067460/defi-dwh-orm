@@ -1,19 +1,20 @@
 from orm.consts.protocolType import ProtocolType
+from orm.consts.chainName import ChainName
 
 # all ['h_addresses']['wallet'] are taken from the latest certain pool tx
 FIXTURES = {
     # curve -> curve
-    '3crv': {
+    '3CRV': {
         'h_labels': {
             'h_label_name': 'RANDOM_WALLET',
             'h_label_notional': 'USDT'
         },
         'h_protocols': {
-            'h_protocol_name': 'curve',
+            'h_protocol_name': 'Curve',
             'h_protocol_type': ProtocolType.DEX
         },
         'h_chains': {
-            'h_network_name': 'ETH',
+            'h_network_name': ChainName.ETH,
             'h_network_id': 1,
             'h_network_endpoint': 'eth.endpoint'
         },
@@ -30,18 +31,18 @@ FIXTURES = {
         }
     },
     # curve -> nereus
-    'nxUSDav3CRV_avax':
+    'nxUSD/av3CRV':
         {
         'h_labels': {
             'h_label_name': 'FUND_DEFI',
             'h_label_notional': 'USDT'
         },
         'h_protocols': {
-            'h_protocol_name': 'nereus',
+            'h_protocol_name': 'Nereus',
             'h_protocol_type': ProtocolType.DEX
         },
         'h_chains': {
-            'h_network_name': 'AVAX',
+            'h_network_name': ChainName.AVAX,
             'h_network_id': 2,
             'h_network_endpoint': 'avax.endpoint'
         },

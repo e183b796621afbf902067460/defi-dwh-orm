@@ -1,7 +1,6 @@
 import pytest
 
 from sqlalchemy_utils import database_exists, drop_database, create_database
-from sqlalchemy import create_engine
 
 from typing import List
 
@@ -15,7 +14,7 @@ from tests.placements.fixtures import FIXTURES
 
 
 @pytest.fixture(scope='class', autouse=True)
-def clear():
+def db_init():
     if database_exists(db_url):
         drop_database(db_url)
     create_database(db_url)
