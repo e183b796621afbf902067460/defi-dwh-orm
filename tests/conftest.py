@@ -163,7 +163,7 @@ def placements(session):
                     h_supp_address_id=h_supp_address.h_supp_address_id,
                     h_supp_abi_id=h_supp_abi.h_supp_abi_id,
                     l_address_abi_token_protocol_chain_id=l_address_abi_token_protocol_chain.l_address_abi_token_protocol_chain_id,
-                    l_supp_address_abi_token_protocol_chain_n=f'n+{n+1}'
+                    l_supp_address_abi_token_protocol_chain_name=f'n+{n+1}'
                 )
                 session.add(l_supp_address_abi_token_protocol_chain)
                 session.commit()
