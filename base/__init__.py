@@ -4,8 +4,6 @@ from orm.models.hubs.h_abis import HubAbis
 from orm.models.hubs.h_tokens import HubTokens
 from orm.models.hubs.h_protocols import HubProtocols
 from orm.models.hubs.h_chains import HubChains
-from orm.models.hubs.h_supp_addresses import HubSupportAddresses
-from orm.models.hubs.h_supp_abis import HubSupportAbis
 
 from orm.models.links.l_addresses_chains import LinkAddressesChains
 from orm.models.links.l_addresses_labels_chains import LinkAddressesLabelsChains
@@ -14,6 +12,5 @@ from orm.models.links.l_addresses_abis_tokens_chains import LinkAddressesAbisTok
 from orm.models.links.l_protocols_chains import LinkProtocolsChains
 from orm.models.links.l_addresses_abis_tokens_protocols_chains import LinkAddressesAbisTokensProtocolsChains
 from orm.models.links.l_addresses_abis_tokens_protocols_labels_chains import LinkAddressesAbisTokensProtocolsLabelsChains
-from orm.models.links.l_supp_addresses_abis_tokens_protocols_chains import LinkSupportAddressesAbisTokensProtocolsChains
 
-from orm.models.sats.h_supp_addresses.s_supp_addresses import SatelliteSupportAddresses
+from orm.models.sats.l_addresses_abis_tokens_protocols_labels_chains.s_balances import SatelliteBalances
