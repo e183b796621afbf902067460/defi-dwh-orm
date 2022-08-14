@@ -14,3 +14,4 @@ from orm.models.links.l_addresses_abis_tokens_protocols_chains import LinkAddres
 from orm.models.links.l_addresses_abis_tokens_protocols_labels_chains import LinkAddressesAbisTokensProtocolsLabelsChains
 
 from orm.models.sats.l_addresses_abis_tokens_protocols_labels_chains.s_balances import SatelliteBalances
+from orm.models.sats.h_tokens.s_prices import SatellitePrices
