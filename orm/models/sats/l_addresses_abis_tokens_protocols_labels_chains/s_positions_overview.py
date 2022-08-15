@@ -4,11 +4,11 @@ from sqlalchemy.sql import func
 from base.main import Base
 
 
-class SatelliteBalances(Base):
+class SatellitePositionsOverview(Base):
 
-    __tablename__ = 's_balances'
+    __tablename__ = 's_positions_overview'
     __table_args__ = {
-        'comment': 'Balances from current open-positions'
+        'comment': 'Position Overview'
     }
 
     s_balance_id = Column(Integer, primary_key=True)  # PK
