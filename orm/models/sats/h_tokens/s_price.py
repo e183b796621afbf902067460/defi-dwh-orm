@@ -6,7 +6,7 @@ from base.main import Base
 
 class SatellitePrices(Base):
 
-    __tablename__ = 's_prices'
+    __tablename__ = 's_price'
     __table_args__ = {
         'comment': 'Token prices'
     }

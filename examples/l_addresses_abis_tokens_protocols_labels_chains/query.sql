@@ -1,12 +1,12 @@
 SELECT
-        l_address_abi_token_protocol_chain_pool as pool,
-        l_address_abi_chain_contract as contract,
-        h_address,
-        h_abi_list,
-        h_network_name,
-        h_label_name,
-        h_protocol_name,
-        h_protocol_type
+    l_address_abi_token_protocol_chain_pool as pool,
+    l_address_abi_chain_contract as contract,
+    h_address,
+    h_abi_list,
+    h_network_name,
+    h_label_name,
+    h_protocol_name,
+    h_protocol_type
 FROM l_addresses_abis_tokens_protocols_labels_chains
 LEFT JOIN l_addresses_labels_chains USING(l_address_label_chain_id)
 LEFT JOIN h_labels USING(h_label_id)
