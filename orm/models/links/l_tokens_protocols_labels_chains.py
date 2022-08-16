@@ -11,5 +11,5 @@ class LinkTokensProtocolsLabelsChains(Base):
     }
 
     l_token_protocol_label_chain_id = Column(Integer, primary_key=True)  # PK
-    l_address_abi_token_protocol_label_chain_id = Column(Integer, ForeignKey('l_addresses_abis_tokens_protocols_labels_chains.l_address_abi_token_protocol_label_chain_id'), nullable=False)
+    l_address_token_protocol_label_chain_id = Column(Integer, ForeignKey('l_addresses_tokens_protocols_labels_chains.l_address_token_protocol_label_chain_id'), nullable=False)
     h_token_id = Column(Integer, ForeignKey('h_tokens.h_token_id'), nullable=False)
