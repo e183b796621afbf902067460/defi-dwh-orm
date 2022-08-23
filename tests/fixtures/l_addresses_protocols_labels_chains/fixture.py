@@ -1,21 +1,21 @@
-from orm.consts.protocolType import ProtocolType
-from orm.consts.chainName import ChainName
+from head.consts.protocols.const import Protocols
+from head.consts.chains.const import Chains
 
 # all ['h_addresses']['wallet'] are taken from the latest certain pool tx
 FIXTURES = {
     # curve
     '3CRV Gauge': {
-        'l_address_token_protocol_chain_pool': '3CRV',
+        'l_address_protocol_label_chain_prefix': 'staking-pool-position-overview',
+        'l_address_protocol_chain_prefix': 'staking-pool-overview',
         'h_labels': {
-            'h_label_name': 'RANDOM_WALLET_3CRV',
-            'h_label_notional': 'USD'
+            'h_label_name': 'RANDOM_WALLET_3CRV'
         },
         'h_protocols': {
             'h_protocol_name': 'Curve',
-            'h_protocol_type': ProtocolType.STAKING
+            'h_protocol_type': Protocols.STAKING
         },
         'h_chains': {
-            'h_network_name': ChainName.ETH,
+            'h_network_name': Chains.ETH,
             'h_network_id': 1,
             'h_network_endpoint': 'eth.endpoint'
         },
@@ -26,17 +26,18 @@ FIXTURES = {
     },
     # uniswap
     'USDC/WETH LP': {
-        'l_address_token_protocol_chain_pool': 'USDC/WETH',
+        'l_address_protocol_label_chain_prefix': 'liquidity-pool-position-overview',
+        'l_address_protocol_chain_prefix': 'liquidity-pool-overview',
         'h_labels': {
             'h_label_name': 'RANDOM_WALLET_UNISWAP_USDC/WETH',
             'h_label_notional': 'USD'
         },
         'h_protocols': {
             'h_protocol_name': 'Uniswap',
-            'h_protocol_type': ProtocolType.DEX
+            'h_protocol_type': Protocols.DEX
         },
         'h_chains': {
-            'h_network_name': ChainName.ETH,
+            'h_network_name': Chains.ETH,
             'h_network_id': 1,
             'h_network_endpoint': 'eth.endpoint'
         },
@@ -45,40 +46,20 @@ FIXTURES = {
             'contract': '0xB4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc'  # USDC/WETH
         }
     },
-    # balancer
-    'SRM/WETH LP': {
-        'l_address_token_protocol_chain_pool': 'SRM/WETH',
-        'h_labels': {
-            'h_label_name': 'RANDOM_WALLET_BALANCER_SRM/WETH_AND_SUSHI_REN/WETH',
-            'h_label_notional': 'USD'
-        },
-        'h_protocols': {
-            'h_protocol_name': 'Balancer',
-            'h_protocol_type': ProtocolType.DEX
-        },
-        'h_chains': {
-            'h_network_name': ChainName.ETH,
-            'h_network_id': 1,
-            'h_network_endpoint': 'eth.endpoint'
-        },
-        'h_addresses': {
-            'wallet': '0xc5ed2333f8a2C351fCA35E5EBAdb2A82F5d254C3',
-            'contract': '0x231E687C9961d3A27e6E266Ac5C433Ce4F8253E4'  # SRM/WETH
-        }
-    },
     # convex
     'sUSD/3CRV Gauge': {
-        'l_address_token_protocol_chain_pool': 'sUSD/3CRV',
+        'l_address_protocol_label_chain_prefix': 'staking-pool-position-overview',
+        'l_address_protocol_chain_prefix': 'staking-pool-overview',
         'h_labels': {
             'h_label_name': 'RANDOM_WALLET_CONVEX_sUSD/3CRV',
             'h_label_notional': 'USD'
         },
         'h_protocols': {
             'h_protocol_name': 'Convex',
-            'h_protocol_type': ProtocolType.STAKING
+            'h_protocol_type': Protocols.STAKING
         },
         'h_chains': {
-            'h_network_name': ChainName.ETH,
+            'h_network_name': Chains.ETH,
             'h_network_id': 1,
             'h_network_endpoint': 'eth.endpoint'
         },
@@ -89,17 +70,18 @@ FIXTURES = {
     },
     # sushi
     'REN/WETH LP': {
-        'l_address_token_protocol_chain_pool': 'REN/WETH',
+        'l_address_protocol_label_chain_prefix': 'liquidity-pool-position-overview',
+        'l_address_protocol_chain_prefix': 'liquidity-pool-overview',
         'h_labels': {
-            'h_label_name': 'RANDOM_WALLET_BALANCER_SRM/WETH_AND_SUSHI_REN/WETH',
+            'h_label_name': 'RANDOM_WALLET_SUSHI_REN/WETH',
             'h_label_notional': 'USD'
         },
         'h_protocols': {
             'h_protocol_name': 'Sushiswap',
-            'h_protocol_type': ProtocolType.DEX
+            'h_protocol_type': Protocols.DEX
         },
         'h_chains': {
-            'h_network_name': ChainName.ETH,
+            'h_network_name': Chains.ETH,
             'h_network_id': 1,
             'h_network_endpoint': 'eth.endpoint'
         },

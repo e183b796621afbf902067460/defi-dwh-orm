@@ -9,8 +9,8 @@ from cfg.session import Session
 from base import *
 from base.main import Base
 
-from tests.fixtures.l_addresses_tokens_protocols_labels_chains.fixture import FIXTURES as POSITION_OVERVIEW_FIXTURES
-from tests.fixtures.l_addresses_tokens_protocols_chains.fixture import FIXTURES as DEX_OVERVIEW_FIXTURES
+from tests.fixtures.l_addresses_protocols_labels_chains.fixture import FIXTURES as POSITION_OVERVIEW_FIXTURES
+from tests.fixtures.l_addresses_protocols_chains.fixture import FIXTURES as POOL_OVERVIEW_FIXTURES
 
 
 @pytest.fixture(scope='session', autouse=True)
@@ -29,7 +29,7 @@ def session():
 
 
 @pytest.fixture(scope='session', autouse=True)
-def l_addresses_tokens_protocols_labels_chains(
+def l_addresses_protocols_labels_chains(
         session: Session,
         fixtures: dict = POSITION_OVERVIEW_FIXTURES
 ):
@@ -41,7 +41,9 @@ def l_addresses_tokens_protocols_labels_chains(
                 h_label_name=fixture['h_labels']['h_label_name']
             )
 
-        h_protocol = session.query(HubProtocols).filter_by(h_protocol_name=fixture['h_protocols']['h_protocol_name']).first()
+        h_protocol = session.query(HubProtocols).filter_by(
+            h_protocol_name=fixture['h_protocols']['h_protocol_name'],
+            h_protocol_type=fixture['h_protocols']['h_protocol_type']).first()
         if not h_protocol:
             h_protocol = HubProtocols(
                 h_protocol_name=fixture['h_protocols']['h_protocol_name'],
@@ -90,22 +92,26 @@ def l_addresses_tokens_protocols_labels_chains(
 
         l_address_chain_wallet = session.query(LinkAddressesChains).filter_by(
             h_address_id=h_address_wallet.h_address_id,
-            h_chain_id=h_chain.h_chain_id
+            h_chain_id=h_chain.h_chain_id,
+            l_address_chain_name=fixture['h_labels']['h_label_name']
         ).first()
         if not l_address_chain_wallet:
             l_address_chain_wallet = LinkAddressesChains(
                 h_address_id=h_address_wallet.h_address_id,
-                h_chain_id=h_chain.h_chain_id
+                h_chain_id=h_chain.h_chain_id,
+                l_address_chain_name=fixture['h_labels']['h_label_name']
             )
 
         l_address_chain_pool = session.query(LinkAddressesChains).filter_by(
             h_address_id=h_address_contract.h_address_id,
-            h_chain_id=h_chain.h_chain_id
+            h_chain_id=h_chain.h_chain_id,
+            l_address_chain_name=contract
         ).first()
         if not l_address_chain_pool:
             l_address_chain_pool = LinkAddressesChains(
                 h_address_id=h_address_contract.h_address_id,
-                h_chain_id=h_chain.h_chain_id
+                h_chain_id=h_chain.h_chain_id,
+                l_address_chain_name=contract
             )
 
         links = [
@@ -129,39 +135,41 @@ def l_addresses_tokens_protocols_labels_chains(
         session.add(l_address_label_chain)
         session.commit()
 
-        l_address_token_protocol_chain = session.query(LinkAddressesTokensProtocolsChains).filter_by(
+        l_address_protocol_chain = session.query(LinkAddressesProtocolsChains).filter_by(
             l_protocol_chain_id=l_protocol_chain.l_protocol_chain_id,
             l_address_chain_id=l_address_chain_pool.l_address_chain_id,
-            l_address_token_protocol_chain_pool=fixture['l_address_token_protocol_chain_pool']
+            l_address_protocol_chain_prefix=fixture['l_address_protocol_chain_prefix']
         ).first()
-        if not l_address_token_protocol_chain:
-            l_address_token_protocol_chain = LinkAddressesTokensProtocolsChains(
+        if not l_address_protocol_chain:
+            l_address_protocol_chain = LinkAddressesProtocolsChains(
                 l_protocol_chain_id=l_protocol_chain.l_protocol_chain_id,
                 l_address_chain_id=l_address_chain_pool.l_address_chain_id,
-                l_address_token_protocol_chain_pool=fixture['l_address_token_protocol_chain_pool']
+                l_address_protocol_chain_prefix=fixture['l_address_protocol_chain_prefix']
             )
-        session.add(l_address_token_protocol_chain)
+        session.add(l_address_protocol_chain)
         session.commit()
 
-        l_address_token_protocol_label_chain = session.query(LinkAddressesTokensProtocolsLabelsChains).filter_by(
-            l_address_token_protocol_chain_id=l_address_token_protocol_chain.l_address_token_protocol_chain_id,
-            l_address_label_chain_id=l_address_label_chain.l_address_label_chain_id
+        l_address_protocol_label_chain = session.query(LinkAddressesProtocolsLabelsChains).filter_by(
+            l_address_protocol_chain_id=l_address_protocol_chain.l_address_protocol_chain_id,
+            l_address_label_chain_id=l_address_label_chain.l_address_label_chain_id,
+            l_address_protocol_label_chain_prefix=fixture['l_address_protocol_label_chain_prefix']
         ).first()
-        if not l_address_token_protocol_label_chain:
-            l_address_token_protocol_label_chain = LinkAddressesTokensProtocolsLabelsChains(
-                l_address_token_protocol_chain_id=l_address_token_protocol_chain.l_address_token_protocol_chain_id,
-                l_address_label_chain_id=l_address_label_chain.l_address_label_chain_id
+        if not l_address_protocol_label_chain:
+            l_address_protocol_label_chain = LinkAddressesProtocolsLabelsChains(
+                l_address_protocol_chain_id=l_address_protocol_chain.l_address_protocol_chain_id,
+                l_address_label_chain_id=l_address_label_chain.l_address_label_chain_id,
+                l_address_protocol_label_chain_prefix=fixture['l_address_protocol_label_chain_prefix']
             )
 
-        session.add(l_address_token_protocol_label_chain)
+        session.add(l_address_protocol_label_chain)
         session.commit()
 
 
 @pytest.fixture(scope='session', autouse=True)
-def l_addresses_tokens_protocols_chains(
-        l_addresses_tokens_protocols_labels_chains,
+def l_addresses_protocols_chains(
+        l_addresses_protocols_labels_chains,
         session: Session,
-        fixtures: dict = DEX_OVERVIEW_FIXTURES,
+        fixtures: dict = POOL_OVERVIEW_FIXTURES,
 ):
 
     for contract, fixture in fixtures.items():
@@ -208,12 +216,14 @@ def l_addresses_tokens_protocols_chains(
 
         l_address_chain_pool = session.query(LinkAddressesChains).filter_by(
             h_address_id=h_address_contract.h_address_id,
-            h_chain_id=h_chain.h_chain_id
+            h_chain_id=h_chain.h_chain_id,
+            l_address_chain_name=contract
         ).first()
         if not l_address_chain_pool:
             l_address_chain_pool = LinkAddressesChains(
                 h_address_id=h_address_contract.h_address_id,
-                h_chain_id=h_chain.h_chain_id
+                h_chain_id=h_chain.h_chain_id,
+                l_address_chain_name=contract
             )
 
         links = [
@@ -223,16 +233,16 @@ def l_addresses_tokens_protocols_chains(
         session.add_all(links)
         session.commit()
 
-        l_address_token_protocol_chain = session.query(LinkAddressesTokensProtocolsChains).filter_by(
+        l_address_protocol_chain = session.query(LinkAddressesProtocolsChains).filter_by(
             l_protocol_chain_id=l_protocol_chain.l_protocol_chain_id,
             l_address_chain_id=l_address_chain_pool.l_address_chain_id,
-            l_address_token_protocol_chain_pool=fixture['l_address_token_protocol_chain_pool']
+            l_address_protocol_chain_prefix=fixture['l_address_protocol_chain_prefix']
         ).first()
-        if not l_address_token_protocol_chain:
-            l_address_token_protocol_chain = LinkAddressesTokensProtocolsChains(
+        if not l_address_protocol_chain:
+            l_address_protocol_chain = LinkAddressesProtocolsChains(
                 l_protocol_chain_id=l_protocol_chain.l_protocol_chain_id,
                 l_address_chain_id=l_address_chain_pool.l_address_chain_id,
-                l_address_token_protocol_chain_pool=fixture['l_address_token_protocol_chain_pool']
+                l_address_protocol_chain_prefix=fixture['l_address_protocol_chain_prefix']
             )
-        session.add(l_address_token_protocol_chain)
+        session.add(l_address_protocol_chain)
         session.commit()
