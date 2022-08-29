@@ -50,7 +50,9 @@ def l_addresses_protocols_labels_chains(
                 h_protocol_type=fixture['h_protocols']['h_protocol_type']
             )
 
-        h_chain = session.query(HubChains).filter_by(h_network_name=fixture['h_chains']['h_network_name']).first()
+        h_chain = session.query(HubChains).filter_by(
+            h_network_name=fixture['h_chains']['h_network_name'],
+            h_network_id=fixture['h_chains']['h_network_id']).first()
         if not h_chain:
             h_chain = HubChains(
                 h_network_name=fixture['h_chains']['h_network_name'],
@@ -183,7 +185,9 @@ def l_addresses_protocols_chains(
                 h_protocol_type=fixture['h_protocols']['h_protocol_type']
             )
 
-        h_chain = session.query(HubChains).filter_by(h_network_name=fixture['h_chains']['h_network_name']).first()
+        h_chain = session.query(HubChains).filter_by(
+            h_network_name=fixture['h_chains']['h_network_name'],
+            h_network_id=fixture['h_chains']['h_network_id']).first()
         if not h_chain:
             h_chain = HubChains(
                 h_network_name=fixture['h_chains']['h_network_name'],

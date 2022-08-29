@@ -59,6 +59,19 @@ FIXTURES = {
         },
         'h_addresses': '0x611CDe65deA90918c0078ac0400A72B0D25B9bb1'
     },
+    'USDT/WETH LP': {
+        'l_address_protocol_chain_prefix': 'liquidity-pool-overview',
+        'h_protocols': {
+            'h_protocol_name': 'Sushiswap',
+            'h_protocol_type': Protocols.DEX
+        },
+        'h_chains': {
+            'h_network_name': Chains.ETH,
+            'h_network_id': 1,
+            'h_network_endpoint': 'eth.endpoint'
+        },
+        'h_addresses': '0x06da0fd433C1A5d7a4faa01111c044910A184553'
+    },
     'sUSD/3CRV Gauge': {
         'l_address_protocol_chain_prefix': 'staking-pool-overview',
         'h_protocols': {
@@ -84,5 +97,44 @@ FIXTURES = {
             'h_network_endpoint': 'eth.endpoint'
         },
         'h_addresses': '0xbFcF63294aD7105dEa65aA58F8AE5BE2D9d0952A'
+    },
+    'WBNB/CAKE LP': {
+        'l_address_protocol_chain_prefix': 'liquidity-pool-overview',
+        'h_protocols': {
+            'h_protocol_name': 'Pancakeswap',
+            'h_protocol_type': Protocols.DEX
+        },
+        'h_chains': {
+            'h_network_name': Chains.BSC,
+            'h_network_id': 2,
+            'h_network_endpoint': 'bsc.endpoint'
+        },
+        'h_addresses': '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0'
+    },
+    'WBNB/BUSD LP': {
+        'l_address_protocol_chain_prefix': 'liquidity-pool-overview',
+        'h_protocols': {
+            'h_protocol_name': 'Pancakeswap',
+            'h_protocol_type': Protocols.DEX
+        },
+        'h_chains': {
+            'h_network_name': Chains.BSC,
+            'h_network_id': 2,
+            'h_network_endpoint': 'bsc.endpoint'
+        },
+        'h_addresses': '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16'
+    },
+    'CAKE/BUSD LP': {
+        'l_address_protocol_chain_prefix': 'liquidity-pool-overview',
+        'h_protocols': {
+            'h_protocol_name': 'Pancakeswap',
+            'h_protocol_type': Protocols.DEX
+        },
+        'h_chains': {
+            'h_network_name': Chains.BSC,
+            'h_network_id': 2,
+            'h_network_endpoint': 'bsc.endpoint'
+        },
+        'h_addresses': '0x804678fa97d91B974ec2af3c843270886528a9E6'
     },
 }
