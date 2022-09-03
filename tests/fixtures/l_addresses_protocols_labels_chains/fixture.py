@@ -1,5 +1,4 @@
 from head.consts.protocols.const import Protocols
-from head.consts.chains.const import Chains
 
 # all ['h_addresses']['wallet'] are taken from the latest certain pool tx
 FIXTURES = {
@@ -15,7 +14,7 @@ FIXTURES = {
             'h_protocol_type': Protocols.STAKING
         },
         'h_chains': {
-            'h_network_name': Chains.ETH,
+            'h_network_name': 'eth',
             'h_network_id': 1,
             'h_network_endpoint': 'eth.endpoint'
         },
@@ -37,7 +36,7 @@ FIXTURES = {
             'h_protocol_type': Protocols.DEX
         },
         'h_chains': {
-            'h_network_name': Chains.ETH,
+            'h_network_name': 'eth',
             'h_network_id': 1,
             'h_network_endpoint': 'eth.endpoint'
         },
@@ -59,7 +58,7 @@ FIXTURES = {
             'h_protocol_type': Protocols.STAKING
         },
         'h_chains': {
-            'h_network_name': Chains.ETH,
+            'h_network_name': 'eth',
             'h_network_id': 1,
             'h_network_endpoint': 'eth.endpoint'
         },
@@ -81,7 +80,7 @@ FIXTURES = {
             'h_protocol_type': Protocols.DEX
         },
         'h_chains': {
-            'h_network_name': Chains.ETH,
+            'h_network_name': 'eth',
             'h_network_id': 1,
             'h_network_endpoint': 'eth.endpoint'
         },
