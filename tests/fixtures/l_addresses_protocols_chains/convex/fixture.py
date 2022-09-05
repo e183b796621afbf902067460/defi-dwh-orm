@@ -26,6 +26,6 @@ FIXTURE = {
             'h_network_id': 1,
             'h_network_endpoint': 'eth.endpoint'
         },
-        'h_addresses': '0x72E158d38dbd50A483501c24f792bDAAA3e7D55C'
+        'h_addresses': '0xB900EF131301B307dB5eFcbed9DBb50A3e209B2e'
     }
 }
