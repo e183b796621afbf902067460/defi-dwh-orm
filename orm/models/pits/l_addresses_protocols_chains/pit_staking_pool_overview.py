@@ -16,4 +16,4 @@ class PITStakingPoolOverview(Base):
     pit_token_symbol = Column(Text, nullable=False)
     pit_token_reserve = Column(Float, nullable=False)
     pit_token_price = Column(Float, nullable=False)
-    pit_liquidity_pool_overview_load_ts = Column(DateTime, server_default=func.now(), nullable=False)
+    pit_staking_pool_overview_load_ts = Column(DateTime, server_default=func.now(), nullable=False)
