@@ -17,4 +17,6 @@ class PITLendingPoolOverview(Base):
     pit_token_reserve_size = Column(Float, nullable=False)
     pit_token_borrow_size = Column(Float, nullable=False)
     pit_token_price = Column(Float, nullable=False)
+    pit_token_deposit_apy = Column(Float, nullable=False)
+    pit_token_borrow_apy = Column(Float, nullable=False)
     pit_lending_pool_overview_load_ts = Column(DateTime, server_default=func.now(), nullable=False)
