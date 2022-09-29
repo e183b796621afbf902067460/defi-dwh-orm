@@ -12,7 +12,7 @@ class PITLendingPoolOverview(Base):
     }
 
     pit_lending_pool_overview_id = Column(Integer, primary_key=True)  # PK
-    l_address_protocol_chain_id = Column(Integer, ForeignKey('l_addresses_protocols_chains.l_address_protocol_chain_id'), nullable=False)
+    l_address_protocol_category_chain_id = Column(Integer, ForeignKey('l_addresses_protocols_categories_chains.l_address_protocol_category_chain_id'), nullable=False)
     pit_token_symbol = Column(Text, nullable=False)
     pit_token_reserve_size = Column(Float, nullable=False)
     pit_token_borrow_size = Column(Float, nullable=False)
