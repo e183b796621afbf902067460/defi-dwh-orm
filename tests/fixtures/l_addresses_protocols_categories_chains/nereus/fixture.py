@@ -1,12 +1,10 @@
-from head.consts.protocols.const import Protocols
 
 
 FIXTURE = {
     'Lending Pool': {
-        'l_address_protocol_chain_prefix': 'lending-pool-overview',
         'h_protocols': {
             'h_protocol_name': 'Nereus',
-            'h_protocol_type': Protocols.LENDING
+            'h_protocol_category_name': 'Lending'
         },
         'h_chains': {
             'h_network_name': 'avax',

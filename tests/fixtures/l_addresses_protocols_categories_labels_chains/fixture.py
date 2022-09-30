@@ -1,4 +1,4 @@
-from head.consts.protocols.const import Protocols
+
 
 # all ['h_addresses']['wallet'] are taken from the latest certain pool tx
 FIXTURES = {
