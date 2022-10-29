@@ -12,8 +12,10 @@ FIXTURE = {
             'h_network_endpoint': 'bsc.endpoint'
         },
         'h_addresses': {
-            'h_pool_address': '0x45c54210128a065de780C4B0Df3d16664f7f859e',
-            'h_wallet_address': '0xeC08867a12546ccf53b32efB8C23bb26bE0C04f1'
+            # MasterChef 0xa5f8C5Dbd5F286960b9d90548680aE5ebFf07652
+            # pid 10
+            'h_pool_address': '0x74E4716E431f45807DCF19f284c7aA99F18a4fbc',
+            'h_wallet_address': '0x5BBf23e93AfAF400414c44F4C6A93a50aE3cDc73'
         },
         'h_labels': {
             'h_label_name': 'DEFI'
