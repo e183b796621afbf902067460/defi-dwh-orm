@@ -1,5 +1,4 @@
 
-
 FIXTURE = {
     'Lending Pool': {
         'h_protocols': {
