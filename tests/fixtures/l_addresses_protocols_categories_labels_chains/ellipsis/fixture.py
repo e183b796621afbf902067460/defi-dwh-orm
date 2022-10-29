@@ -1,6 +1,5 @@
 
 
-
 FIXTURE = {
     'EPX Staking Pool': {
         'h_protocols': {
