@@ -1,7 +1,7 @@
 
 
 FIXTURE = {
-    'VALAS/BNB Staking Pool': {
+    'EPX Staking Pool': {
         'h_protocols': {
             'h_protocol_name': 'Ellipsis',
             'h_protocol_category_name': 'Staking'
@@ -12,8 +12,8 @@ FIXTURE = {
             'h_network_endpoint': 'bsc.endpoint'
         },
         'h_addresses': {
-            'h_pool_address': '0x6B46dFaC1E46f059cea6C0a2D7642d58e8BE71F8',  # '0x5B74C99AA2356B4eAa7B85dC486843eDff8Dfdbe'
-            'h_wallet_address': '0x818D51ab5cdb5C6872BdF9439707f858854E74CA'
+            'h_pool_address': '0x22A93F53A0A3E6847D05Dd504283e8E296a49aAE',
+            'h_wallet_address': '0x6Fd5a849cc4BB26fdE7737395E3b4A91F3B78A5a'
         },
         'h_labels': {
             'h_label_name': 'DEFI'
