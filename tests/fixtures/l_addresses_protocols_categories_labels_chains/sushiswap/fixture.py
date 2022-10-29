@@ -1,5 +1,6 @@
 
 
+
 FIXTURE = {
     'CVX/ETH LP': {
         'h_protocols': {
