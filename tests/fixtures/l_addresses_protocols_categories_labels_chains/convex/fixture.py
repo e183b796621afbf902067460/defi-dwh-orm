@@ -1,6 +1,5 @@
 
 
-
 FIXTURE = {
     'FRAX/3CRV Gauge': {
         'h_protocols': {
