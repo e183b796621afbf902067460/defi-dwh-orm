@@ -1,7 +1,7 @@
 
 
 FIXTURE = {
-    'Autocake': {
+    'WETH/WBNB LP': {
         'h_protocols': {
             'h_protocol_name': 'Pancakeswap',
             'h_protocol_category_name': 'Staking'
