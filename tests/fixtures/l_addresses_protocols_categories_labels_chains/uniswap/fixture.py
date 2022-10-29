@@ -1,6 +1,5 @@
 
 
-
 FIXTURE = {
     'USDC/WETH LP': {
         'h_protocols': {
