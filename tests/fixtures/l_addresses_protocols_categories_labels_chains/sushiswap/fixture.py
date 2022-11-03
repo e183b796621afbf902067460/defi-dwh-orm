@@ -4,7 +4,7 @@ FIXTURE = {
     'CVX/ETH LP': {
         'h_protocols': {
             'h_protocol_name': 'Sushiswap',
-            'h_protocol_category_name': 'DEX'
+            'h_protocol_category_name': 'Farming'
         },
         'h_chains': {
             'h_network_name': 'eth',
