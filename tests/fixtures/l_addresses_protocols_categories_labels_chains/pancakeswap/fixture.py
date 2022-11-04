@@ -14,8 +14,8 @@ FIXTURE = {
         'h_addresses': {
             # MasterChef 0xa5f8C5Dbd5F286960b9d90548680aE5ebFf07652
             # pid 10
-            'h_pool_address': '0x74E4716E431f45807DCF19f284c7aA99F18a4fbc',
-            'h_wallet_address': '0x5BBf23e93AfAF400414c44F4C6A93a50aE3cDc73'
+            'h_pool_address': '0x2354ef4DF11afacb85a5C7f98B624072ECcddbB1',
+            'h_wallet_address': '0xD183F2BBF8b28d9fec8367cb06FE72B88778C86B'
         },
         'h_labels': {
             'h_label_name': 'DEFI'
