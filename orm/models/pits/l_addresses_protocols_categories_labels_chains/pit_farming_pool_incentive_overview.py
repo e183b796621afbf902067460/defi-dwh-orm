@@ -4,16 +4,16 @@ from sqlalchemy.sql import func
 from base.main import Base
 
 
-class PITDEXPoolIncentiveOverview(Base):
+class PITFarmingPoolIncentiveOverview(Base):
 
-    __tablename__ = 'pit_dex_pool_incentive_overview'
+    __tablename__ = 'pit_farming_pool_incentive_overview'
     __table_args__ = {
-        'comment': 'DEX Pool Incentive Overview'
+        'comment': 'Farming Pool Incentive Overview'
     }
 
-    pit_dex_pool_incentive_overview_id = Column(Integer, primary_key=True)  # PK
+    pit_farming_pool_incentive_overview_id = Column(Integer, primary_key=True)  # PK
     l_address_protocol_category_label_chain_id = Column(Integer, ForeignKey('l_addresses_protocols_categories_labels_chains.l_address_protocol_category_label_chain_id'), nullable=False)
     pit_token_symbol = Column(Text, nullable=False)
     pit_token_amount = Column(Float, nullable=False)
     pit_token_price = Column(Float, nullable=False)
-    pit_dex_pool_incentive_overview_load_ts = Column(DateTime, server_default=func.now(), nullable=False)
+    pit_farming_pool_incentive_overview_load_ts = Column(DateTime, server_default=func.now(), nullable=False)

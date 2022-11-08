@@ -12,8 +12,6 @@ FIXTURE = {
             'h_network_endpoint': 'bsc.endpoint'
         },
         'h_addresses': {
-            # MasterChef 0xa5f8C5Dbd5F286960b9d90548680aE5ebFf07652
-            # pid 10
             'h_pool_address': '0x74E4716E431f45807DCF19f284c7aA99F18a4fbc',
             'h_wallet_address': '0x5BBf23e93AfAF400414c44F4C6A93a50aE3cDc73'
         },
