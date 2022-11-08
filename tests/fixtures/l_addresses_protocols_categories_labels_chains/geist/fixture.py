@@ -13,7 +13,7 @@ FIXTURE = {
         },
         'h_addresses': {
             'h_pool_address': '0x9FAD24f572045c7869117160A571B2e50b10d068',
-            'h_wallet_address': '0xbDfA4f4492dD7b7Cf211209C4791AF8d52BF5c50'
+            'h_wallet_address': '0xbbbb1e5810998581F7977E9F5fa98a3250Cb809f'
         },
         'h_labels': {
             'h_label_name': 'DEFI'
